@@ -1,0 +1,10 @@
+venv
+*.pyc
+.env
+staticfiles
+db.sqlite3
+getting-started/*
+**/.ipynb_checkpoints/*
+.idea
+geckodriver.log
+*.hdf
