@@ -5,11 +5,12 @@ from django.db import models
 
 class Bairro(models.Model):
     nome = models.CharField('Nome', max_length=150)
-    n_pessoas = models.IntegerField('Número de pessoas')
-    n_criancas_1 = models.IntegerField('Número de crianças com menos de 1 ano')
-    n_criancas = models.IntegerField('Número de Criancas')
-    n_idosos = models.IntegerField('Número de idosos')
+    n_pessoas = models.IntegerField('Número de pessoas', null=True, blank=True)
+    n_criancas_1 = models.IntegerField('Número de crianças com menos de 1 ano', null=True, blank=True)
+    n_criancas = models.IntegerField('Número de Criancas', null=True, blank=True)
+    n_idosos = models.IntegerField('Número de idosos', null=True, blank=True)
     cidade = models.CharField('Cidade', max_length=150)
+    uf = models.CharField('UF', max_length=3)
 
     @property
     def n_gravidas(self):
