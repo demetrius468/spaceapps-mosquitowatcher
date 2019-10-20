@@ -23,7 +23,7 @@ def weight(request):
     df_precip = pd.read_csv('tracker/IR_Precip_Est_A.csv', dtype=np.float, delimiter=';', header=None)
     temp = df_temp.iloc[x, y]
     precip = df_precip.iloc[x, y]
-    qs = Bairro.objects.all().annotate(vulnerabilidade=0.3*models.F('n_idosos') + 0.3*models.F('n_criancas') + 0.4*models.F('n_criancas_1')).values()
+    qs = Bairro.objects.filter(cidade__icontains=cidade).annotate(vulnerabilidade=0.3*models.F('n_idosos') + 0.3*models.F('n_criancas') + 0.4*models.F('n_criancas_1')).values()
     return JsonResponse({'res':list(qs)})
 
 def gerar_df():
