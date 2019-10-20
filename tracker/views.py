@@ -4,6 +4,7 @@ from django.core import serializers
 from .models import Bairro
 import numpy as np
 import pandas as pd
+from django.db import models
 # Create your views here.
 
 def bairros(request, cidade):
