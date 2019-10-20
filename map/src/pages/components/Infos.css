@@ -1,0 +1,27 @@
+.dados {
+  padding-top: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;  
+}
+
+.titulos {
+  
+}
+
+.conteudo-texto {
+  padding-top: 10px;
+  font-size: 30px;
+}
+
+hr {
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.size-box {
+  height: 15px;
+}
