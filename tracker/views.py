@@ -25,7 +25,7 @@ def weight(request):
     temp = df_temp.iloc[x, y]
     precip = df_precip.iloc[x, y]
     qs = Bairro.objects.filter(cidade__icontains=cidade).annotate(vulnerabilidade=0.3*models.F('n_idosos') + 0.3*models.F('n_criancas') + 0.4*models.F('n_criancas_1')).values()
-    return JsonResponse({'res':list(qs)})
+    return JsonResponse({'res':list(qs), 'temp':temp, 'precip':precip})
 
 def gerar_df():
     df = pd.read_excel('tracker/censo/sinopse_AC.xls')
